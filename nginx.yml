@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Install Nginx Server
+      yum: name=nginx update_cache=yes state=latest
+      notify:
+        - Start nginx Server
+  handlers:
+    - name: Start nginx Server
+      service:
+          name=nginx
+          state=restarted
+...
