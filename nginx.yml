@@ -3,7 +3,7 @@
   become: true
   tasks:
     - name: Install Nginx Server
-      yum: name=tomcat9 update_cache=yes state=present
+      yum: name=tomcat10 update_cache=yes state=present
       notify:
         - Start nginx Server
   handlers:
