@@ -3,12 +3,12 @@
   become: true
   tasks:
     - name: Install Nginx Server
-      yum: name=tree update_cache=yes state=present
+      yum: name=tomcat9 update_cache=yes state=present
       notify:
         - Start nginx Server
   handlers:
     - name: Start nginx Server
       service:
-          name=tree
+          name=tomcat9
           state=restarted
 ...
